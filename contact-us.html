@@ -2,26 +2,30 @@
   <head>
     <script src="https://cdn.tailwindcss.com"></script>
     </head>
-<h2 class="text-lg font-bold mb-2">Contact Us</h2>
+<h <h2>class="text-lg font-bold mb-2">Contact Us</h2>
   <p class="mb-6">Mau tahu informasi lebih lanjut? hubungi contact di bawah ini</p>
 <form>
-  <div class="mb-4">
-    <label for="Alamat Email"
- class="block mb-1">Email:</label>
-     <input type="Email"
+       <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium">Email</label> 
  <id="Email" class=w-full
    border-gray-400 p-2" placeholder="Masukkan Email kamu">
-    </div>
-  <div class="mb-4">
-<label for="phone" 
-  class="block mb-1">Nomor Telepon:</label>
-      <input type="tel" id="phone" 
-  class="w-full border-gray-400 p-2" placeholder="Masukkan nomor telepon kamu">
-</div>
-<button type="submit"
-  class="bg-gray-200 border
-  border-gray-400 p-2">Kirim</button>
-</form>
-</div>
+     <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+      </div>
+            <div>
+                <label for="phone" class="block text-sm font-medium">No. HP/WA</label>
+                <input type="text" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2">
+            </div>
+            <div>
+   <label for="message" class="block text-sm font-medium">Pesan</label>
+                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="bg-pink-800 text-white px-4 py-2 rounded-md">Kirim</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>
+
