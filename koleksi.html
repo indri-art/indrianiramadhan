@@ -5,30 +5,15 @@
   <title>Koleksi Buku Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-    }
-  </style>
 </head>
 <body class="bg-gray-100 p-5">
 
-  <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">📚 Koleksi Buku Digital</h1>
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-10">📚 Koleksi Buku Digital</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="bookGrid"></div>
 
   <script>
     const books = [
-      },
-      {
-        title: "The Tale of Peter Rabbit",
-        image: "https://covers.openlibrary.org/b/id/8232400-L.jpg",
-        link: "https://www.gutenberg.org/files/14838/14838-h/14838-h.htm"
-      },
-      {
-        title: "The Art of War",
-        image: "https://covers.openlibrary.org/b/id/10521265-L.jpg",
-        link: "https://www.gutenberg.org/files/132/132-h/132-h.htm"
-      },
+      // Novel
       {
         title: "Pride and Prejudice",
         image: "https://covers.openlibrary.org/b/id/8231990-L.jpg",
@@ -40,9 +25,33 @@
         link: "https://www.gutenberg.org/files/98/98-h/98-h.htm"
       },
       {
-        title: "Moby Dick",
-        image: "https://covers.openlibrary.org/b/id/7222246-L.jpg",
-        link: "https://www.gutenberg.org/files/2701/2701-h/2701-h.htm"
+        title: "Frankenstein",
+        image: "https://covers.openlibrary.org/b/id/8235116-L.jpg",
+        link: "https://www.gutenberg.org/files/84/84-h/84-h.htm"
+      },
+
+      // Pemrograman Web
+      {
+        title: "HTML and CSS: Design and Build Websites",
+        image: "https://m.media-amazon.com/images/I/41nP6a2cDLL._SX396_BO1,204,203,200_.jpg",
+        link: "https://drive.google.com/file/d/1htUoNuXkODF9iQ3w4Dnb_iM91Dvm3Mzx/view"
+      },
+      {
+        title: "Eloquent JavaScript",
+        image: "https://eloquentjavascript.net/img/cover.jpg",
+        link: "https://eloquentjavascript.net/Eloquent_JavaScript.pdf"
+      },
+      {
+        title: "JavaScript for Kids",
+        image: "https://m.media-amazon.com/images/I/91vGjufRXzL.jpg",
+        link: "https://nostarch.com/sites/default/files/jsforkids_chapter0.pdf"
+      },
+
+      // Buku Cerita Anak
+      {
+        title: "The Tale of Peter Rabbit",
+        image: "https://covers.openlibrary.org/b/id/8232400-L.jpg",
+        link: "https://www.gutenberg.org/files/14838/14838-h/14838-h.htm"
       },
       {
         title: "Cinderella",
@@ -50,9 +59,15 @@
         link: "https://www.gutenberg.org/files/19993/19993-h/19993-h.htm"
       },
       {
-        title: "HTML and CSS: Design and Build Websites",
-        image: "https://m.media-amazon.com/images/I/41nP6a2cDLL._SX396_BO1,204,203,200_.jpg",
-        link: "https://drive.google.com/file/d/1htUoNuXkODF9iQ3w4Dnb_iM91Dvm3Mzx/view"
+        title: "The Jungle Book",
+        image: "https://covers.openlibrary.org/b/id/8226196-L.jpg",
+        link: "https://www.gutenberg.org/files/236/236-h/236-h.htm"
+      },
+      {
+        title: "Alice’s Adventures in Wonderland",
+        image: "https://covers.openlibrary.org/b/id/8225638-L.jpg",
+        link: "https://www.gutenberg.org/files/11/11-h/11-h.htm"
+      }
     ];
 
     const bookGrid = document.getElementById('bookGrid');
@@ -61,7 +76,7 @@
       const card = document.createElement('div');
       card.className = 'bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105 cursor-pointer text-center';
       card.innerHTML = `
-        <img src="${book.image}" alt="Cover of the book titled ${book.title}" class="w-full h-64 object-cover"/>
+        <img src="${book.image}" alt="Cover buku ${book.title}" class="w-full h-64 object-cover"/>
         <div class="p-4 font-bold text-gray-700">${book.title}</div>
       `;
       card.addEventListener('click', () => {
