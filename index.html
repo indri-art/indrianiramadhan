@@ -46,6 +46,114 @@
         <p>Selain itu, halaman ini juga kerja sama dengan perpustakaan lain <a href="https://perpustakaan.upi.edu/" class="text-warning">Perpustakaan UPI</a> yang menyediakan berbagai sumber informasi di dalamnya, serta dapat menjadi bahan pembelajaran. Semoga web ini bermanfaat dan membantu kamu. Jangan ragu untuk mengetahui lebih lanjut!</p>
     </main>
 
+
+    <html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Event Perpustakaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+</head>
+<body class="bg-gray-100 p-5">
+  <div class="container mx-auto bg-white p-5 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-5"> Event Perpustakaan</h1>
+    <div id="event-list" class="space-y-4"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-5 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+      <span class="close text-gray-500 text-2xl cursor-pointer float-right" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title" class="text-2xl font-bold mb-2"></h2>
+      <p id="modal-date" class="text-gray-500 mb-4"></p>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+
+  <script>
+    const events = [
+      {
+        title: "Seminar Literasi Digital",
+        date: "15 April 2025",
+        image: "https://placehold.co/120x80?text=Seminar+Literasi+Digital&bg=gray&color=white",
+        description: "Perpustakaan UIN mengadakan seminar tentang pentingnya literasi digital dalam era AI. Seminar ini akan menghadirkan narasumber dari kalangan akademisi dan praktisi industri teknologi informasi. Terbuka untuk umum dan gratis!",
+      },
+      {
+        title: "Lomba Resensi Buku Nasional",
+        date: "20 April 2025",
+        image: "https://placehold.co/120x80?text=Lomba+Resensi+Buku+Nasional&bg=gray&color=white",
+        description: "Ikuti lomba resensi buku dengan total hadiah jutaan rupiah. Peserta diminta mengirimkan resensi buku favorit mereka. Lomba ini terbuka untuk pelajar dan mahasiswa seluruh Indonesia. Pendaftaran dibuka sampai 18 April.",
+      },
+      {
+        title: "Bedah Buku: 'AI dalam Pendidikan'",
+        date: "25 April 2025",
+        image: "https://placehold.co/120x80?text=Bedah+Buku+AI+dalam+Pendidikan&bg=gray&color=white",
+        description: "Diskusi dan bedah buku bersama penulis tentang peran Artificial Intelligence dalam dunia pendidikan dan perpustakaan. Event ini akan dilangsungkan secara hybrid (offline & online). Peserta akan mendapatkan e-sertifikat.",
+      }
+    ];
+
+    const eventList = document.getElementById("event-list");
+
+    events.forEach((event, index) => {
+      const div = document.createElement("div");
+      div.className = "event flex items-center p-4 border-b border-gray-200 cursor-pointer hover:bg-gray-100 transition duration-200";
+      div.innerHTML = `
+        <img src="${event.image}" alt="Gambar untuk ${event.title}" class="w-30 h-20 object-cover rounded-lg mr-4"/>
+        <div class="event-info">
+          <h2 class="text-xl font-bold text-blue-600">${event.title}</h2>
+          <p class="date text-gray-500">Tanggal: ${event.date}</p>
+        </div>
+      `;
+      div.addEventListener("click", () => openModal(index));
+      eventList.appendChild(div);
+    });
+
+    function openModal(index) {
+      const event = events[index];
+      document.getElementById("modal-title").innerText = event.title;
+      document.getElementById("modal-date").innerText = "Tanggal: " + event.date;
+      document.getElementById("modal-description").innerText = event.description;
+      document.getElementById("modal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+
+    // Tutup modal jika klik luar
+    window.onclick = function(event) {
+      const modal = document.getElementById("modal");
+      if (event.target == modal) {
+        modal.classList.add("hidden");
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <div class="text-center mt-4">
         <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAPpW1oY25xe_f05aKaD5DNg8KEZ77IjC6yLVGsH-fLDjQpR1QcYg5SSsfu0a9mcSjJlzyFJDnsaGn03WO-redVcNDZntpBrXjYymqIQA_NIKOJFoOMaPy9aDkc1aam_QLTsbdg8I86oDK/s1600/anjing.gif" class="img-fluid" alt="Anjing">
     </div>
