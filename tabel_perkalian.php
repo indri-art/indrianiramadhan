@@ -1,52 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tabel Perkalian 10x10</title>
+    <title>Gambar Tabel Perkalian</title>
     <style>
-        table {
-            border-collapse: collapse;
-            margin: 20px;
-        }
-        th, td {
-            border: 1px solid #444;
-            padding: 10px;
+        body {
             text-align: center;
+            font-family: Arial, sans-serif;
         }
-        th {
-            background-color: #ccc;
+        img {
+            margin-top: 20px;
+            max-width: 90%;
+            height: auto;
+            border: 1px solid #aaa;
         }
     </style>
 </head>
 <body>
 
-<h2>Tabel Perkalian 10 x 10</h2>
-
-<table>
-    <tr>
-        <th>x</th>
-        <?php
-        // Header kolom 1 sampai 10
-        for ($i = 1; $i <= 10; $i++) {
-            echo "<th>$i</th>";
-        }
-        ?>
-    </tr>
-
-    <?php
-    // Baris 1 sampai 10
-    for ($i = 1; $i <= 10; $i++) {
-        echo "<tr>";
-        echo "<th>$i</th>"; // Header baris
-
-        for ($j = 1; $j <= 10; $j++) {
-            $hasil = $i * $j;
-            echo "<td>$i x $j = $hasil</td>"; // Isi tabel: 1 x 1 = 1
-        }
-
-        echo "</tr>";
-    }
-    ?>
-</table>
+<h2>Tabel Perkalian 1 sampai 10 (Gambar)</h2>
+<img src="tabel_perkalian.png" alt="Tabel Perkalian 1 sampai 10">
 
 </body>
 </html>
+
