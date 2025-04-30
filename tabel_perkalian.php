@@ -21,5 +21,5 @@
 <img src="tabel_perkalian.png" alt="Tabel Perkalian 1 sampai 10">
 
 </body>
-</html>
+</html> 
 
