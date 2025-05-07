@@ -73,25 +73,27 @@
     <script>
         const events = [
             {
-                title: "Seminar Literasi Digital",
-                date: "15 April 2025",
-                image: "https://source.unsplash.com/500x300/?library,seminar",
-                shortDesc: "Seminar membahas pentingnya literasi digital di era AI.",
-                fullDesc: "Perpustakaan Indriani Ramadhan menyelenggarakan seminar yang membahas tentang pentingnya literasi digital di era teknologi. Acara ini diikuti oleh mahasiswa dan dosen, serta menghadirkan pakar IT sebagai narasumber."
+            title: "Workshop Menulis Kreatif di Perpustakaan USU",
+             date: "Senin, 5 Mei 2025",
+             image: "https://source.unsplash.com/500x300/?writing,workshop",
+             shortDesc: "Workshop penulisan kreatif untuk pelajar dan mahasiswa di Perpustakaan USU.",
+             fullDesc: "Acara ini diadakan di Ruang Konferensi, Lantai 1, Gedung Perpustakaan USU, dengan tujuan meningkatkan keterampilan menulis kreatif bagi peserta.",
+             instagram: "https://www.instagram.com/p/DJRSbLozRAp/"
+            {
+            title: "Kunjungan Edukatif SD Negeri 060788 ke Layanan Anak",
+            date: "Rabu, 12 Maret 2025",
+            image: "https://source.unsplash.com/500x300/?library,children",
+            shortDesc: "Kunjungan siswa SD Negeri 060788 ke Layanan Anak Dinas Perpustakaan dan Arsip Provinsi Sumatera Utara.",
+            fullDesc: "Pada Rabu, 12 Maret 2025, siswa-siswi SD Negeri 060788 Medan melakukan kunjungan edukatif ke Layanan Anak Dinas Perpustakaan dan Arsip Provinsi Sumatera Utara. Kegiatan ini bertujuan untuk meningkatkan minat baca sejak dini.",
+            instagram: "https://www.instagram.com/disperpusipprovsu_official/reel/DFH1WrjSOzP/"
             },
             {
-                title: "Lomba Resensi Buku Nasional",
-                date: "20 April 2025",
-                image: "https://source.unsplash.com/500x300/?books,writing",
-                shortDesc: "Lomba untuk mengasah kemampuan berpikir kritis dan menulis.",
-                fullDesc: "Lomba ini mengajak mahasiswa membuat resensi dari buku pilihan. Tersedia hadiah menarik dan e-sertifikat untuk semua peserta. Kirim karya sebelum 18 April 2025."
-            },
-            {
-                title: "Bedah Buku: 'AI dalam Pendidikan'",
-                date: "25 April 2025",
-                image: "https://source.unsplash.com/500x300/?education,ai,book",
-                shortDesc: "Diskusi terbuka seputar buku dan teknologi AI.",
-                fullDesc: "Acara bedah buku ini membahas bagaimana kecerdasan buatan (AI) diterapkan dalam dunia pendidikan. Dihadiri penulis buku dan pengamat teknologi, acara berlangsung hybrid (offline & online)."
+             title: "Sertifikat Program Peningkatan Keterampilan Pegawai",
+             date: "Selasa, 6 Mei 2025",
+             image: "https://source.unsplash.com/500x300/?library,certificate",
+             shortDesc: "Upacara penyerahan sertifikat untuk gelombang pertama Program Peningkatan Keterampilan Pegawai di Perpustakaan USU.",
+             fullDesc: "Perpustakaan Universitas Sumatera Utara (USU) menyelenggarakan upacara penyerahan sertifikat bagi peserta gelombang pertama Program Peningkatan Keterampilan Pegawai. Acara ini bertujuan untuk meningkatkan kompetensi staf perpustakaan dalam menghadapi tantangan era digital.",
+             instagram: "https://www.instagram.com/p/DJUKqjuzMiB/"
             }
         ];
 
@@ -112,18 +114,7 @@
             container.appendChild(col);
         });
 
-        function showEventDetail(index) {
-            const event = events[index];
-            document.getElementById('eventModalLabel').textContent = event.title;
-            document.getElementById('modal-img').src = event.image;
-            document.getElementById('modal-date').textContent = "Tanggal: " + event.date;
-            document.getElementById('modal-desc').textContent = event.fullDesc;
-            document.getElementById('eventModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('eventModal').classList.add('hidden');
-        }
+      
     </script>
 
      <div class="text-center mt-4">
