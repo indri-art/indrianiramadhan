@@ -53,6 +53,62 @@
     </div>
 
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Perpustakaan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Perpustakaan</h1>
+        
+        <!-- Form tambah buku -->
+        <div class="form-container">
+            <h2>Tambah Buku</h2>
+            <form id="add-book-form">
+                <input type="text" id="book-title" placeholder="Judul Buku" required>
+                <input type="text" id="book-author" placeholder="Penulis" required>
+                <select id="book-category" required>
+                    <option value="" disabled selected>Kategori</option>
+                    <option value="Fiksi">Fiksi</option>
+                    <option value="Non-Fiksi">Non-Fiksi</option>
+                    <option value="Sejarah">Sejarah</option>
+                    <option value="Sains">Sains</option>
+                </select>
+                <button type="submit">Tambah Buku</button>
+            </form>
+        </div>
+
+        <!-- Pencarian dan Filter -->
+        <div class="search-container">
+            <h2>Pencarian Buku</h2>
+            <input type="text" id="search-book" placeholder="Cari buku...">
+            <select id="filter-category">
+                <option value="">Semua Kategori</option>
+                <option value="Fiksi">Fiksi</option>
+                <option value="Non-Fiksi">Non-Fiksi</option>
+                <option value="Sejarah">Sejarah</option>
+                <option value="Sains">Sains</option>
+            </select>
+        </div>
+
+        <!-- Daftar Buku -->
+        <div id="book-list">
+            <h2>Daftar Buku</h2>
+            <ul id="book-list-items"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
 
 
     <footer class="bg-dark blue text-white text-center py-3 mt-4">
