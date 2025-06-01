@@ -1,81 +1,51 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Koleksi Buku Digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="bg-gray-100 p-5">
 
-  <h1 class="text-3xl font-bold text-center text-gray-800 mb-10"> 📚 Koleksi Buku Digital</h1>
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">📚 Koleksi Buku Digital</h1>
+
+  <!-- Input Pencarian -->
+  <div class="max-w-xl mx-auto mb-10">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔍 Cari buku berdasarkan judul..."
+      class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+    />
+  </div>
+
+  <!-- Grid Buku -->
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="bookGrid"></div>
 
   <script>
     const books = [
-      // Novel
-      {
-        title: "Pride and Prejudice",
-        image: "https://covers.openlibrary.org/b/id/8231990-L.jpg",
-        link: "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm"
-      },
-      {
-        title: "A Tale of Two Cities",
-        image: "https://covers.openlibrary.org/b/id/7984916-L.jpg",
-        link: "https://www.gutenberg.org/files/98/98-h/98-h.htm"
-      },
-      {
-        title: "Frankenstein",
-        image: "https://covers.openlibrary.org/b/id/8235116-L.jpg",
-        link: "https://www.gutenberg.org/files/84/84-h/84-h.htm"
-      },
-
-      // Pemrograman Web
-      {
-        title: "Eloquent JavaScript",
-        image: "https://eloquentjavascript.net/img/cover.jpg",
-        link: "https://eloquentjavascript.net/Eloquent_JavaScript.pdf"
-
-      },
-
-      // Buku Cerita Anak
-      {
-        title: "The Tale of Peter Rabbit",
-        image: "https://covers.openlibrary.org/b/id/8232400-L.jpg",
-        link: "https://www.gutenberg.org/files/14838/14838-h/14838-h.htm"
-      },
-      {
-        title: "Cinderella",
-        image: "https://covers.openlibrary.org/b/id/5546156-L.jpg",
-        link: "https://www.gutenberg.org/files/19993/19993-h/19993-h.htm"
-      },
-      {
-        title: "The Jungle Book",
-        image: "https://covers.openlibrary.org/b/id/8226196-L.jpg",
-        link: "https://www.gutenberg.org/files/236/236-h/236-h.htm"
-      },
-      {
-        title: "Alice’s Adventures in Wonderland",
-        image: "https://covers.openlibrary.org/b/id/8225638-L.jpg",
-        link: "https://www.gutenberg.org/files/11/11-h/11-h.htm"
-      }
+      { title: "Pride and Prejudice", image: "https://covers.openlibrary.org/b/id/8231990-L.jpg", link: "https://www.gutenberg.org/files/1342/1342-h/1342-h.htm" },
+      { title: "A Tale of Two Cities", image: "https://covers.openlibrary.org/b/id/7984916-L.jpg", link: "https://www.gutenberg.org/files/98/98-h/98-h.htm" },
+      { title: "Frankenstein", image: "https://covers.openlibrary.org/b/id/8235116-L.jpg", link: "https://www.gutenberg.org/files/84/84-h/84-h.htm" },
+      { title: "Eloquent JavaScript", image: "https://eloquentjavascript.net/img/cover.jpg", link: "https://eloquentjavascript.net/Eloquent_JavaScript.pdf" },
+      { title: "The Tale of Peter Rabbit", image: "https://covers.openlibrary.org/b/id/8232400-L.jpg", link: "https://www.gutenberg.org/files/14838/14838-h/14838-h.htm" },
+      { title: "Cinderella", image: "https://covers.openlibrary.org/b/id/5546156-L.jpg", link: "https://www.gutenberg.org/files/19993/19993-h/19993-h.htm" },
+      { title: "The Jungle Book", image: "https://covers.openlibrary.org/b/id/8226196-L.jpg", link: "https://www.gutenberg.org/files/236/236-h/236-h.htm" },
+      { title: "Alice’s Adventures in Wonderland", image: "https://covers.openlibrary.org/b/id/8225638-L.jpg", link: "https://www.gutenberg.org/files/11/11-h/11-h.htm" }
     ];
 
     const bookGrid = document.getElementById('bookGrid');
+    const searchInput = document.getElementById('searchInput');
 
-    books.forEach(book => {
-      const card = document.createElement('div');
-      card.className = 'bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105 cursor-pointer text-center';
-      card.innerHTML = 
-        <img src="${book.image}" alt="Cover buku ${book.title}" class="w-full h-64 object-cover"/>
-        <div class="p-4 font-bold text-gray-700">${book.title}</div>
-      ;
-      card.addEventListener('click', () => {
-        window.open(book.link, '_blank');
-      });
-      bookGrid.appendChild(card);
-    });
-  </script>
-
-</body>
-</html> 
+    function displayBooks(filteredBooks) {
+      bookGrid.innerHTML = ""; // Kosongkan isi grid
+      filteredBooks.forEach(book => {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-200 hover:scale-105 cursor-pointer text-center';
+        card.innerHTML = `
+          <img src="${book.image}" alt="Cover buku ${book.title}" class="w-full h-64 object-cover"/>
+          <div class="p-4 font-bold text-gray-700">${book.title}</div>
+        `;
+        c
